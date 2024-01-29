@@ -57,3 +57,7 @@ button:hover {
 	justify-content: center;
 	align-items: center;
 }
+
+.img-container img {
+	width: 100%;
+}

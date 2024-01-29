@@ -197,3 +197,64 @@ main section h2 {
 	font-weight: 500;
 }
 /* End Why Faveni Section */
+
+/* EAD Advantages */
+#ead-advantages {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	font-size: 1.1rem;
+}
+
+#ead-advantages > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.8rem;
+}
+
+#ead-advantages ul {
+	padding-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	list-style-type: none;
+}
+
+#ead-advantages ul li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#ead-advantages ul li i {
+	font-size: 1rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: var(--light-green);
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	color: var(--real-white);
+}
+
+#ead-advantages .img-container {
+	max-width: 300px;
+}
+
+#ead-advantages .img-container img {
+	filter: drop-shadow(0 0 1rem #0302);
+}
+/* End EAD Advantages */
+
+/* Media Query */
+@media (max-width: 875px) {
+	#ead-advantages {
+		padding: var(--default-inline-padding) var(--default-inline-padding) 0;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+	}
+}

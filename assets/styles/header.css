@@ -21,7 +21,7 @@ header nav {
 	align-items: center;
 }
 
-header nav .img-container img {
+header nav .img-container {
 	width: 130px;
 }
 
@@ -90,16 +90,15 @@ header .banner .principal .btn:hover {
 	background-color: var(--light-green);
 }
 
-header .banner .student-img-container {
+header .banner .img-container {
 	min-width: 400px;
 	max-width: 500px;
 	display: flex;
 	align-items: flex-end;
 }
 
-header .banner .student-img-container img {
+header .banner .img-container img {
 	filter: drop-shadow(0 0 1rem #0004);
-	width: 100%;
 }
 
 /* Media Query */
