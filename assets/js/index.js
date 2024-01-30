@@ -66,7 +66,7 @@ const updateTestimonialsCarouselItemsWidth = (width) => {
 		"#testimonials-carousel-inner >.carousel-item"
 	);
 
-	const newWidth = width >= 425 ? 425 : width;
+	const newWidth = width >= 500 ? 500 : width;
 
 	testimonialsCarousel.style.width = newWidth + "px";
 	inner.style.width = items.length * newWidth + "px";
@@ -78,9 +78,9 @@ const updateCarouselsWidth = () => {
 	updateWhyFaveniCarouselItemsWidth(whyFaveniwidth);
 
 	const testimonialsWidth =
-		window.innerWidth >= 1100
+		window.innerWidth >= 950
 			? 0.5 * window.innerWidth - 4 * 48
-			: window.innerWidth - 6 * 48;
+			: window.innerWidth - 4 * 48;
 	updateTestimonialsCarouselItemsWidth(testimonialsWidth);
 };
 

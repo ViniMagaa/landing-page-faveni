@@ -192,16 +192,26 @@ main section h2 {
 
 /* Testimonials */
 #testimonials .carousel-container {
-	padding: var(--default-inline-padding);
+	padding: var(--default-inline-padding) 1rem;
 	background-color: var(--white);
-	justify-self: flex-start;
 	flex: 1;
 	border-radius: 2rem 0;
 	transition: height var(--default-transition-duration);
 }
 
+#testimonials .carousel-container .carousel-button {
+	background: none;
+	color: var(--light-green);
+	font-size: 1.5rem;
+	padding: 0;
+}
+
+#testimonials .carousel-container .carousel-button:hover {
+	color: var(--dark-green);
+}
+
 #testimonials .carousel-item {
-	gap: 2rem;
+	gap: 1rem;
 }
 
 #testimonials .carousel-item .quote {
@@ -211,7 +221,7 @@ main section h2 {
 }
 
 #testimonials .carousel-item .student-info {
-	max-width: 70%;
+	max-width: 80%;
 	margin: auto;
 	display: flex;
 	justify-content: center;
@@ -314,7 +324,7 @@ main section h2 {
 /* End Useful Informations */
 
 /* Media Query */
-@media (max-width: 1100px) {
+@media (max-width: 950px) {
 	#useful-informations .content-wrapper {
 		flex-direction: column;
 		gap: 2rem;
