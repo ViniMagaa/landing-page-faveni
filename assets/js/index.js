@@ -84,6 +84,25 @@ const updateCarouselsWidth = () => {
 	updateTestimonialsCarouselItemsWidth(testimonialsWidth);
 };
 
+// --- FAQ Acordeon ---
+const faqAcordeon = document.getElementById("faq-acordeon");
+const faqAcordeonItems = faqAcordeon.querySelectorAll("#faq-acordeon > .item");
+
+const resetFaqAcordeonItems = () => {
+	faqAcordeonItems.forEach((faqAcordeonItem) => {
+		faqAcordeonItem.classList.remove("active");
+		faqAcordeonItem.querySelector("p").style.display = "none";
+		faqAcordeonItem.querySelector("i").style.display = "block";
+	});
+};
+
+const toggleFaqAcordeonItemActive = (item) => {
+	resetFaqAcordeonItems();
+	item.classList.add("active");
+	item.querySelector("p").style.display = "block";
+	item.querySelector("i").style.display = "none";
+};
+
 // --- Global Handlers ---
 const clickHandler = (e) => {
 	if (!menu.contains(e.target) && !burgerButton.contains(e.target)) {
@@ -97,6 +116,7 @@ const resizeHandler = () => {
 
 // --- Events ---
 updateCarouselsWidth();
+toggleFaqAcordeonItemActive(faqAcordeonItems[0]);
 
 // --- Event Listeners ---
 
@@ -116,9 +136,17 @@ testimonialsCarouselNextButton.addEventListener("click", () =>
 	carouselTestimonialsScroll(1)
 );
 
-// Menu
+// - Menu
 burgerButton.addEventListener("click", toggleMenu);
 menu.addEventListener("click", toggleMenu);
+
+// - FAQ Acordeon
+faqAcordeonItems.forEach((faqAcordeonItem) =>
+	faqAcordeonItem.children[0].addEventListener("click", (e) => {
+		e.stopPropagation();
+		toggleFaqAcordeonItemActive(faqAcordeonItem);
+	})
+);
 
 document.body.addEventListener("click", clickHandler);
 window.onresize = resizeHandler;
