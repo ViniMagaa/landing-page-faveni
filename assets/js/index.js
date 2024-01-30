@@ -20,35 +20,68 @@ const toggleMenu = () => {
 };
 
 // --- Carousels ---
-const carouselPrevButton = document.getElementById(
+const whyFaveniCarouselPrevButton = document.getElementById(
 	"why-faveni-carousel-button-left"
 );
-const carouselNextButton = document.getElementById(
+const whyFaveniCarouselNextButton = document.getElementById(
 	"why-faveni-carousel-button-right"
 );
-const carouselWhyFaveni = document.getElementById("why-faveni-carousel");
+const whyFaveniCarousel = document.getElementById("why-faveni-carousel");
+
+const testimonialsCarouselPrevButton = document.getElementById(
+	"testimonials-carousel-button-left"
+);
+const testimonialsCarouselNextButton = document.getElementById(
+	"testimonials-carousel-button-right"
+);
+const testimonialsCarousel = document.getElementById("testimonials-carousel");
+
+const carouselScrollX = (carousel, width) => {
+	carousel.scrollTo(carousel.scrollLeft + width, 0);
+};
 
 const carouselWhyFaveniScroll = (direction) => {
-	const width = carouselWhyFaveni.style.width.replace("px", "");
-	carouselScrollX(direction * Number(width));
+	const width = whyFaveniCarousel.style.width.replace("px", "");
+	carouselScrollX(whyFaveniCarousel, direction * Number(width));
 };
 
-const updateCarouselsItemsWidth = (width) => {
-	const items = document.getElementsByClassName("carousel-item");
-	const inner = document.getElementsByClassName("carousel-inner");
+const updateWhyFaveniCarouselItemsWidth = (width) => {
+	const inner = document.getElementById("why-faveni-carousel-inner");
+	const items = document.querySelectorAll(
+		"#why-faveni-carousel-inner > .carousel-item"
+	);
 
-	inner[0].style.width = items.length * 0.7 * width + "px";
+	whyFaveniCarousel.style.width = width + "px";
+	inner.style.width = items.length * 0.7 * width + "px";
 };
 
-const updateWhyFaveniCarouselWidth = () => {
-	const width = window.innerWidth < 700 ? window.innerWidth : 700;
-	carouselWhyFaveni.style.width = width + "px";
-
-	updateCarouselsItemsWidth(width);
+const carouselTestimonialsScroll = (direction) => {
+	const width = Number(testimonialsCarousel.style.width.replace("px", ""));
+	carouselScrollX(testimonialsCarousel, direction * width);
 };
 
-const carouselScrollX = (width) => {
-	carouselWhyFaveni.scrollTo(carouselWhyFaveni.scrollLeft + width, 0);
+const updateTestimonialsCarouselItemsWidth = (width) => {
+	const inner = document.getElementById("testimonials-carousel-inner");
+	const items = document.querySelectorAll(
+		"#testimonials-carousel-inner >.carousel-item"
+	);
+
+	const newWidth = width >= 425 ? 425 : width;
+
+	testimonialsCarousel.style.width = newWidth + "px";
+	inner.style.width = items.length * newWidth + "px";
+	items.forEach((item) => (item.style.width = newWidth - 2 * 16 + "px"));
+};
+
+const updateCarouselsWidth = () => {
+	const whyFaveniwidth = window.innerWidth < 700 ? window.innerWidth : 700;
+	updateWhyFaveniCarouselItemsWidth(whyFaveniwidth);
+
+	const testimonialsWidth =
+		window.innerWidth >= 1100
+			? 0.5 * window.innerWidth - 4 * 48
+			: window.innerWidth - 6 * 48;
+	updateTestimonialsCarouselItemsWidth(testimonialsWidth);
 };
 
 // --- Global Handlers ---
@@ -59,20 +92,28 @@ const clickHandler = (e) => {
 };
 
 const resizeHandler = () => {
-	updateWhyFaveniCarouselWidth();
+	updateCarouselsWidth();
 };
 
 // --- Events ---
-updateWhyFaveniCarouselWidth();
+updateCarouselsWidth();
 
 // --- Event Listeners ---
 
-// Carousel
-carouselPrevButton.addEventListener("click", () =>
+// - Carousels
+// Why Faveni
+whyFaveniCarouselPrevButton.addEventListener("click", () =>
 	carouselWhyFaveniScroll(-0.7)
 );
-carouselNextButton.addEventListener("click", () =>
+whyFaveniCarouselNextButton.addEventListener("click", () =>
 	carouselWhyFaveniScroll(0.7)
+);
+// Testimonials
+testimonialsCarouselPrevButton.addEventListener("click", () =>
+	carouselTestimonialsScroll(-1)
+);
+testimonialsCarouselNextButton.addEventListener("click", () =>
+	carouselTestimonialsScroll(1)
 );
 
 // Menu

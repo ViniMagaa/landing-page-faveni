@@ -61,3 +61,35 @@ button:hover {
 .img-container img {
 	width: 100%;
 }
+
+.carousel-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.carousel-container .carousel {
+	overflow: hidden;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+}
+
+.carousel-container .carousel::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel-container .carousel .carousel-inner {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.carousel-container .carousel .carousel-inner .carousel-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	scroll-snap-align: center;
+	text-align: center;
+}
