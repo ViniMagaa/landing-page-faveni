@@ -22,91 +22,32 @@ main section h2 {
 	gap: 1rem;
 }
 
-#our-courses .courses-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: 2rem;
+#our-courses .card-body .card-description h3 {
+	font-size: 1.5rem;
 }
 
-.course {
-	--default-box-shadow-color: rgb(0, 0, 0, 0.15);
-	--default-transition-duration: 0.2s;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: 0.5rem;
-	padding-bottom: 1rem;
-	background-color: var(--real-white);
-	box-shadow: 0 0.5rem 1.5rem var(--default-box-shadow-color);
-	border-radius: 0 2rem;
-	overflow: hidden;
-}
-
-.course-header {
-	max-height: 200px;
-	overflow: hidden;
-}
-
-.course-header img {
-	width: 100%;
-}
-
-.course-body,
-.course-footer {
-	padding: 0 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: 0.5rem;
-}
-
-.course-body .course-description p {
-	font-size: 0.8rem;
-	margin-bottom: 0.3rem;
-	padding-bottom: 0.3rem;
+#our-courses .card-body .card-description p {
+	padding-bottom: 0.5rem;
 	border-bottom: 2px solid var(--dark-emerald-green);
 }
 
-.course-body .course-description .course-description-price small {
-	opacity: 0.6;
-	line-height: 0;
+#our-courses .card-body .card-description .card-description-price {
+	line-height: 1rem;
 }
 
-.course-body .course-description .course-description-price strong {
+#our-courses .card-body .card-description .card-description-price small {
+	opacity: 0.6;
+}
+
+#our-courses .card-body .card-description .card-description-price strong {
 	font-size: 1.25rem;
 }
 
-.course-body .course-description .course-description-price ul {
-	list-style-type: none;
+#our-courses .card-body .card-description .card-description-price ul {
 	display: grid;
 	font-size: 0.8rem;
 	grid-template-columns: 1fr 1fr;
-}
-
-.course a {
-	padding: 0.5rem;
-	border-radius: 2rem;
-	color: var(--real-white);
-	font-weight: 600;
-	text-decoration: none;
-	text-align: center;
-	transition: background-color var(--default-transition-duration);
-}
-
-.course a.btn.course-form-link {
-	background-color: var(--dark-emerald-green);
-}
-
-.course a.btn.course-form-link:hover {
-	background-color: var(--dark-green);
-}
-
-.course a.btn.see-options-link {
-	background-color: var(--gold);
-}
-
-.course a.btn.see-options-link:hover {
-	background-color: var(--dark-gold);
+	list-style-type: none;
 }
 /* End Our Courses Section */
 
@@ -332,10 +273,43 @@ main section h2 {
 	height: auto;
 	opacity: 1;
 	border-top: 1px solid var(--dark-green);
-	transition: height var(--default-transition-duration),
-		padding var(--default-transition-duration);
+	transition: padding var(--default-transition-duration);
 }
 /* End FAQ */
+
+/* Meet Faveni */
+#meet-faveni {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#meet-faveni .faveni-head-office {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#meet-faveni .faveni-head-office .img-container img {
+	border-radius: 0 2rem;
+	min-height: inherit;
+}
+
+#meet-faveni .faveni-head-office p {
+	text-align: justify;
+}
+
+#meet-faveni .card-description > div {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#meet-faveni .card-description i {
+	font-size: 1.2rem;
+	color: var(--dark-emerald-green);
+}
+/* End Meet Faveni */
 
 /* End Useful Informations */
 
@@ -358,5 +332,41 @@ main section h2 {
 		align-items: center;
 		gap: 0.5rem;
 		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1000px) {
+	#meet-faveni .faveni-head-office {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	#meet-faveni .cards-container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#meet-faveni .cards-container .card {
+		flex-direction: row;
+		gap: 0;
+		padding: 0;
+	}
+
+	#meet-faveni .card .card-header {
+		width: 40%;
+		height: 270px;
+		object-fit: cover;
+		display: flex;
+		justify-content: center;
+	}
+	
+	#meet-faveni .card .card-header img {
+		height: inherit;
+		width: auto;
+	}
+
+	#meet-faveni .card-body {
+		padding: 1rem;
+		height: 100%;
 	}
 }

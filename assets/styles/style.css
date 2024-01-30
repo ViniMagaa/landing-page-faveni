@@ -93,3 +93,75 @@ button:hover {
 	scroll-snap-align: center;
 	text-align: center;
 }
+
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 2rem;
+}
+
+.cards-container .card {
+	--default-box-shadow-color: rgb(0, 0, 0, 0.15);
+	--default-transition-duration: 0.2s;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding-bottom: 1rem;
+	background-color: var(--real-white);
+	box-shadow: 0 0.5rem 1.5rem var(--default-box-shadow-color);
+	border-radius: 0 2rem;
+	overflow: hidden;
+}
+
+.cards-container .card-header {
+	height: 200px;
+	overflow: hidden;
+}
+
+.cards-container .card-header img {
+	width: 100%;
+}
+
+.cards-container .card-body {
+	padding: 0 1rem;
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 0.5rem;
+	font-size: 0.8rem;
+}
+
+.cards-container .card-body > div  {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.cards-container .card-body a {
+	padding: 0.5rem;
+	border-radius: 2rem;
+	color: var(--real-white);
+	font-weight: 600;
+	font-size: 1rem;
+	text-decoration: none;
+	text-align: center;
+	transition: background-color var(--default-transition-duration);
+}
+
+.cards-container .card-body a.btn.card-form-link {
+	background-color: var(--dark-emerald-green);
+}
+
+.cards-container .card-body a.btn.card-form-link:hover {
+	background-color: var(--dark-green);
+}
+
+.cards-container .card-body a.btn.alt-card-form-link {
+	background-color: var(--gold);
+}
+
+.cards-container .card-body a.btn.alt-card-form-link:hover {
+	background-color: var(--dark-gold);
+}
