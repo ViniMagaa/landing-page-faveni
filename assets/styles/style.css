@@ -15,7 +15,7 @@
 	--default-text-color: #010;
 	--default-box-shadow-color: rgba(0, 0, 0, 0.5);
 	--default-inline-padding: 1.2rem;
-	--default-transition-duration: 150ms;
+	--default-transition-duration: 120ms;
 	--default-border-radius: 0.5rem;
 }
 
@@ -60,6 +60,13 @@ button:hover {
 
 .img-container img {
 	width: 100%;
+}
+
+.content-wrapper {
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	gap: 3rem;
 }
 
 .carousel-container {
