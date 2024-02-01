@@ -74,13 +74,13 @@ const updateTestimonialsCarouselItemsWidth = (width) => {
 };
 
 const updateCarouselsWidth = () => {
-	const whyFaveniwidth = window.innerWidth < 700 ? window.innerWidth : 700;
-	updateWhyFaveniCarouselItemsWidth(whyFaveniwidth);
+	const whyFaveniWidth = window.innerWidth < 700 ? window.innerWidth : 700;
+	updateWhyFaveniCarouselItemsWidth(whyFaveniWidth);
 
 	const testimonialsWidth =
 		window.innerWidth >= 950
 			? 0.5 * window.innerWidth - 4 * 48
-			: window.innerWidth - 4 * 48;
+			: window.innerWidth - 3 * 48;
 	updateTestimonialsCarouselItemsWidth(testimonialsWidth);
 };
 

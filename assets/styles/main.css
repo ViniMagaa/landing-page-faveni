@@ -12,7 +12,6 @@ main section {
 
 main section h2 {
 	color: var(--dark-green);
-	font-size: 2rem;
 }
 
 /* Our Courses Sectionc */
@@ -23,7 +22,7 @@ main section h2 {
 }
 
 #our-courses .card-body .card-description h3 {
-	font-size: 1.5rem;
+	font-size: clamp(1.2rem, 4vw, 1.4rem);
 }
 
 #our-courses .card-body .card-description p {
@@ -185,7 +184,7 @@ main section h2 {
 
 /* Testimonials */
 #testimonials .carousel-container {
-	padding: var(--default-inline-padding) 1rem;
+	padding: var(--default-inline-padding) 0.8rem;
 	background-color: var(--white);
 	flex: 1;
 	border-radius: 2rem 0;

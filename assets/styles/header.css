@@ -81,18 +81,17 @@ header .banner .principal h1 {
 	border-bottom: 2px solid var(--white);
 }
 
-header .banner .principal .btn {
+header .banner .principal .btn-special {
 	background-color: var(--dark-emerald-green);
 	box-shadow: 0px 1rem 3rem var(--default-box-shadow-color);
 }
 
-header .banner .principal .btn:hover {
+header .banner .principal .btn-special:hover {
 	background-color: var(--light-green);
 }
 
 header .banner .img-container {
-	min-width: 400px;
-	max-width: 500px;
+	width: clamp(350px, 35vw, 500px);
 	display: flex;
 	align-items: flex-end;
 }
@@ -103,10 +102,6 @@ header .banner .img-container img {
 
 /* Media Query */
 @media (max-width: 1100px) {
-	header {
-		height: 110vh;
-	}
-
 	header nav {
 		position: relative;
 		justify-content: initial;
@@ -163,7 +158,7 @@ header .banner .img-container img {
 		cursor: pointer;
 	}
 
-	header nav .btn {
+	header nav .btn-special {
 		position: absolute;
 		right: var(--default-inline-padding);
 	}

@@ -14,7 +14,7 @@
 
 	--default-text-color: #010;
 	--default-box-shadow-color: rgba(0, 0, 0, 0.5);
-	--default-inline-padding: 1.2rem;
+	--default-inline-padding: 1rem;
 	--default-transition-duration: 120ms;
 	--default-border-radius: 0.5rem;
 }
@@ -33,7 +33,12 @@ body {
 	color: var(--default-text-color);
 }
 
-button {
+h2 {
+	font-size: clamp(1.6rem, 5vw, 2rem);
+}
+
+button,
+a.btn-special {
 	padding: 0.5rem 1rem;
 	background-color: var(--dark-green);
 	outline: none;
@@ -41,13 +46,15 @@ button {
 	border-radius: var(--default-border-radius);
 	color: white;
 	text-transform: uppercase;
+	text-decoration: none;
 	font-weight: 700;
 	letter-spacing: 2px;
 	transition: var(--default-transition-duration);
 	cursor: pointer;
 }
 
-button:hover {
+button:hover,	
+a.btn-special:hover {
 	background-color: var(--light-green);
 }
 
@@ -121,7 +128,7 @@ button:hover {
 }
 
 .cards-container .card-header {
-	height: 200px;
+	height: 180px;
 	overflow: hidden;
 }
 
