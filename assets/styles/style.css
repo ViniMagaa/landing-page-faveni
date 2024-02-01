@@ -3,7 +3,7 @@
 :root {
 	--white: #f1fff1;
 	--real-white: #fefffe;
-	--emerald: #5bba6fff;
+	--emerald: #25D366;
 	--light-green: #03a64a;
 	--dark-emerald-green: #137547ff;
 	--dark-green: #1d5131;
@@ -58,6 +58,40 @@ a.btn-special:hover {
 	background-color: var(--light-green);
 }
 
+a.whatsapp-button {
+	--default-size: calc(3 * var(--default-inline-padding));
+	--default-padding: 0.5rem;
+	width: var(--default-size);
+	height: var(--default-size);
+	padding: var(--default-padding);
+	background-color: var(--emerald);
+	position: fixed;
+	right: calc(1.5 * var(--default-inline-padding));
+	bottom: calc(1.5 * var(--default-inline-padding));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--default-padding);
+	border-radius: var(--default-size);
+	text-decoration: none;
+	color: var(--real-white);
+	font-size: 2rem;
+	box-shadow: 0 0 2rem var(--default-box-shadow-color);
+	overflow: hidden;
+	transition: var(--default-transition-duration);
+}
+
+a.whatsapp-button:hover {
+	width: calc(3 * var(--default-size) + 3 * var(--default-padding));
+}
+
+a.whatsapp-button:hover::before {
+	content: "Fale conosco";
+	font-size: 1rem;
+	text-wrap: nowrap;
+}
+
+/* Global Classes */
 .img-container,
 .img-container a {
 	display: flex;
