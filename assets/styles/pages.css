@@ -1,0 +1,66 @@
+/* Header */
+header.background {
+	height: 40vh;
+	background-attachment: scroll;
+}
+
+header .banner {
+	justify-content: center;
+}
+
+header .banner .principal {
+	align-items: center;
+}
+
+header .banner .principal h1 {
+	--default-font-size: clamp(2.8rem, 5vw, 3.8rem);
+	font-size: var(--default-font-size);
+	line-height: var(--default-font-size);
+	border: none;
+	text-shadow: 0 0 1rem var(--default-box-shadow-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header .banner .principal h1 small {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	line-height: clamp(1.5rem, 3vw, 2rem);
+	color: var(--light-yellow);
+}
+/* End Header */
+
+/* Main */
+main .options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+main .options .options-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+	gap: 1rem;
+}
+
+main .options .options-container details {
+  cursor: pointer;
+}
+
+main .options .options-container details summary {
+  background-color: var(--light-yellow);
+	padding: 0 var(--default-inline-padding);
+  border-radius: 1rem;
+}
+
+main .options .options-container details[open] summary {
+  border-radius: 1rem 1rem 0 0;
+}
+
+main .options .options-container details[open] ul {
+  padding: 0.5rem 1.8rem;
+  border: 1px solid var(--light-yellow);
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+}
+/* EndMain */

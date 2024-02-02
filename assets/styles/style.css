@@ -3,7 +3,7 @@
 :root {
 	--white: #f1fff1;
 	--real-white: #fefffe;
-	--emerald: #25D366;
+	--emerald: #25d366;
 	--light-green: #03a64a;
 	--dark-emerald-green: #137547ff;
 	--dark-green: #1d5131;
@@ -28,9 +28,30 @@
 }
 
 body {
+	width: 100%;
+	min-height: 100vh;
 	overflow-x: hidden;
 	background-color: var(--white);
 	color: var(--default-text-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+main section {
+	width: clamp(280px, 1200px, 100%);
+	margin: auto;
+	padding: var(--default-inline-padding) calc(2 * var(--default-inline-padding));
+}
+
+main section h2 {
+	color: var(--dark-green);
 }
 
 h2 {
@@ -53,7 +74,7 @@ a.btn-special {
 	cursor: pointer;
 }
 
-button:hover,	
+button:hover,
 a.btn-special:hover {
 	background-color: var(--light-green);
 }
@@ -180,7 +201,7 @@ a.whatsapp-button:hover::before {
 	font-size: 0.8rem;
 }
 
-.cards-container .card-body > div  {
+.cards-container .card-body > div {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -212,4 +233,36 @@ a.whatsapp-button:hover::before {
 
 .cards-container .card-body a.btn.alt-card-form-link:hover {
 	background-color: var(--dark-gold);
+}
+
+.price {
+	font-size: 1.25rem;
+	font-weight: 800;
+	position: relative;
+}
+
+.price .price-tag {
+	background-color: var(--light-green);
+	padding: 0 0.2rem;
+	position: absolute;
+	top: -0.65rem;
+	right: -1.6rem;
+	border-radius: 0.3rem;
+	font-size: 0.7rem;
+	color: var(--real-white);
+	font-weight: 700;
+	transform: rotate(10deg);
+	animation: scale 1.5s infinite;
+}
+
+@keyframes scale {
+	0% {
+		scale: 1;
+	}
+	50% {
+		scale: 1.1;
+	}
+	100% {
+		scale: 1;
+	}
 }
