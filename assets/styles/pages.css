@@ -13,7 +13,7 @@ header .banner .principal {
 }
 
 header .banner .principal h1 {
-	--default-font-size: clamp(2.8rem, 5vw, 3.8rem);
+	--default-font-size: clamp(2.5rem, 5vw, 3.5rem);
 	font-size: var(--default-font-size);
 	line-height: var(--default-font-size);
 	border: none;
@@ -34,7 +34,7 @@ header .banner .principal h1 small {
 main .options {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 main .options .options-container {
@@ -62,5 +62,30 @@ main .options .options-container details[open] ul {
   border: 1px solid var(--light-yellow);
   border-top: none;
   border-radius: 0 0 1rem 1rem;
+}
+
+main .options .options-container .option a {
+	position: relative;
+	color: var(--dark-emerald-green);
+	text-decoration: none;
+}
+
+main .options .options-container .option a:hover {
+	color: var(--dark-gold);
+}
+
+main .options .options-container .option a::after {
+	content: "";
+	background-color: var(--dark-gold);
+	width: 0;
+	height: 1.5px;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	transition: width var(--default-transition-duration);
+}
+
+main .options .options-container .option a:hover::after {
+	width: 100%;
 }
 /* EndMain */
