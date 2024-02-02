@@ -32,9 +32,9 @@ header .banner .principal h1 small {
 
 /* Main */
 main .options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 main .options .options-container {
@@ -46,19 +46,20 @@ main .options .options-container {
 main .options .options-container details summary {
 	background-color: var(--light-yellow);
 	padding: 0 var(--default-inline-padding);
-  border-radius: 1rem;
+	border-radius: 1rem;
 	cursor: pointer;
 }
 
 main .options .options-container details[open] summary {
-  border-radius: 1rem 1rem 0 0;
+	border-radius: 1rem 1rem 0 0;
 }
 
 main .options .options-container details[open] ul {
-  padding: 0.5rem 1.8rem;
-  border: 1px solid var(--light-yellow);
-  border-top: none;
-  border-radius: 0 0 1rem 1rem;
+	background-color: var(--real-white);
+	padding: 0.5rem 1.8rem;
+	border: 1px solid var(--light-yellow);
+	border-top: none;
+	border-radius: 0 0 1rem 1rem;
 }
 
 main .options .options-container .option a {
