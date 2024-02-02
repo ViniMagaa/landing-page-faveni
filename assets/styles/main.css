@@ -38,8 +38,36 @@ main section h2 {
 	opacity: 0.6;
 }
 
-#our-courses .card-body .card-description .card-description-price strong {
+#our-courses .card-body .card-description .card-description-price .price {
 	font-size: 1.25rem;
+	font-weight: 800;
+	position: relative;
+}
+
+#our-courses .card-body .card-description .card-description-price .price .price-tag {
+	background-color: var(--light-green);
+	padding: 0 0.2rem;
+	position: absolute;
+	top: -0.65rem;
+	right: -1.6rem;
+	border-radius: 0.3rem;
+	font-size: 0.7rem;
+	color: var(--real-white);
+	font-weight: 700;
+	transform: rotate(10deg);
+	animation: scale 1.5s infinite;
+}
+
+@keyframes scale {
+	0% {
+		scale: 1;
+	}
+	50% {
+		scale: 1.1;
+	}
+	100% {
+		scale: 1;
+	}
 }
 
 #our-courses .card-body .card-description .card-description-price ul {
