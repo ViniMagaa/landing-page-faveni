@@ -1,3 +1,21 @@
+// --- Navbar ---
+const navBar = document.getElementById("navbar");
+
+const toggleNavBarActive = (isActive) => {
+	if (isActive) {
+		navBar.classList.remove("hide");
+		navBar.classList.add("active");
+		return;
+	}
+	navBar.classList.add("hide");
+	navBar.classList.remove("active");
+};
+
+const resetNavBar = () => {
+	navBar.classList.remove("hide");
+	navBar.classList.remove("active");
+};
+
 // --- Menu ---
 const burgerButton = document.querySelector("#burger");
 const burgerIcon = burgerButton.querySelector("i"); // Assuming the icon is an <i> element
@@ -104,6 +122,21 @@ const toggleFaqAcordeonItemActive = (item) => {
 };
 
 // --- Global Handlers ---
+let scrollY = window.scrollY;
+
+const scrollHandler = () => {
+	if (window.scrollY < scrollY) {
+		toggleNavBarActive(true);
+	} else {
+		if (menu.classList.contains("active")) return;
+		toggleNavBarActive(false);
+	}
+	if (window.scrollY <= 200) {
+		resetNavBar();
+	}
+	scrollY = window.scrollY;
+};
+
 const clickHandler = (e) => {
 	if (!menu.contains(e.target) && !burgerButton.contains(e.target)) {
 		deactivateMenu();
@@ -148,5 +181,6 @@ faqAcordeonItems.forEach((faqAcordeonItem) =>
 	})
 );
 
+window.onscroll = scrollHandler;
 document.body.addEventListener("click", clickHandler);
 window.onresize = resizeHandler;

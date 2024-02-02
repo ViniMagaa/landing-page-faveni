@@ -19,6 +19,20 @@ header nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: top var(--default-transition-duration);
+	z-index: 999;
+}
+
+header nav.active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 1rem var(--default-box-shadow-color);
+}
+
+header nav.hide {
+	position: fixed;
+	top: -80px;
 }
 
 header nav .img-container {
