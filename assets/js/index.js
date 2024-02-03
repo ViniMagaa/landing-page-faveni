@@ -16,7 +16,7 @@ const testimonialsCarouselNextButton = document.getElementById(
 const testimonialsCarousel = document.getElementById("testimonials-carousel");
 
 const carouselScrollX = (carousel, width) => {
-	carousel.scrollTo(carousel.scrollLeft + width, 0);
+	carousel.scroll(carousel.scrollLeft + width, 0);
 };
 
 const carouselWhyFaveniScroll = (direction) => {
@@ -87,9 +87,11 @@ const resizeHandler = () => {
 	updateCarouselsWidth();
 };
 
-// --- Events ---
+// --- Functions ---
 updateCarouselsWidth();
 toggleFaqAcordeonItemActive(faqAcordeonItems[0]);
+whyFaveniCarousel.scroll(0, 0);
+testimonialsCarousel.scroll(0, 0);
 
 // --- Event Listeners ---
 
