@@ -91,4 +91,14 @@ main .options .options-container .option a::after {
 main .options .options-container .option a:hover::after {
 	width: 100%;
 }
+
+main .action-buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+main .action-buttons .btn {
+	flex: 1;
+}
 /* EndMain */

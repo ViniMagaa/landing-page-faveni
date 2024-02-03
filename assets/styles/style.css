@@ -79,6 +79,34 @@ a.btn-special:hover {
 	background-color: var(--light-green);
 }
 
+
+a.btn {
+	padding: 0.5rem;
+	border-radius: 2rem;
+	color: var(--real-white);
+	font-weight: 600;
+	font-size: 1rem;
+	text-decoration: none;
+	text-align: center;
+	transition: background-color var(--default-transition-duration);
+}
+
+a.btn.form-link {
+	background-color: var(--dark-emerald-green);
+}
+
+a.btn.form-link:hover {
+	background-color: var(--dark-green);
+}
+
+a.btn.alt-form-link {
+	background-color: var(--gold);
+}
+
+a.btn.alt-form-link:hover {
+	background-color: var(--dark-gold);
+}
+
 a.whatsapp-button {
 	--default-size: calc(3 * var(--default-inline-padding));
 	--default-padding: 0.5rem;
@@ -206,33 +234,6 @@ a.whatsapp-button:hover::before {
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 0.5rem;
-}
-
-.cards-container .card-body a {
-	padding: 0.5rem;
-	border-radius: 2rem;
-	color: var(--real-white);
-	font-weight: 600;
-	font-size: 1rem;
-	text-decoration: none;
-	text-align: center;
-	transition: background-color var(--default-transition-duration);
-}
-
-.cards-container .card-body a.btn.card-form-link {
-	background-color: var(--dark-emerald-green);
-}
-
-.cards-container .card-body a.btn.card-form-link:hover {
-	background-color: var(--dark-green);
-}
-
-.cards-container .card-body a.btn.alt-card-form-link {
-	background-color: var(--gold);
-}
-
-.cards-container .card-body a.btn.alt-card-form-link:hover {
-	background-color: var(--dark-gold);
 }
 
 .price {
