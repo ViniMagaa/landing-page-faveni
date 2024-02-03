@@ -4,6 +4,10 @@ header.background {
 	background-attachment: scroll;
 }
 
+/* header nav menu li:not(:last-child):after {
+	margin-inline: 0.2rem;
+} */
+
 header .banner {
 	justify-content: center;
 }
